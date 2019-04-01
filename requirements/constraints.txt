@@ -12,6 +12,7 @@
 functools32 ; python_version == "2.7"
 futures ; python_version == "2.7"
 python-openid ; python_version == "2.7"
+pysqlite ; python_version == "2.7"
 
 # six is at 1.12.0, but transifex-client requires ==1.11.0
 # https://github.com/transifex/transifex-client/issues/252
@@ -44,6 +45,3 @@ pytest-randomly<2.0.0
 
 # Tornado dropped support for Python 2.7 and 3.4 with version 6.0. Only Python 3.5.2+ is now supported
 tornado<6.0
-
-# Preventing https://github.com/edx/edx-proctoring/pull/557 being installed before https://github.com/edx/edx-platform/pull/19959
-edx-proctoring==1.5.22
