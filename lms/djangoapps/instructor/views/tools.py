@@ -17,8 +17,6 @@ from student.models import get_user_by_username_or_email
 from edx_when import api
 
 
-
-
 class DashboardError(Exception):
     """
     Errors arising from use of the instructor dashboard.
