@@ -3468,4 +3468,5 @@ INSTALLED_APPS.extend(plugin_apps.get_apps(plugin_constants.ProjectType.LMS))
 plugin_settings.add_plugins(__name__, plugin_constants.ProjectType.LMS, plugin_constants.SettingsType.COMMON)
 
 ############### Settings for edx-rbac  ###############
-SYSTEM_WIDE_ROLE_CLASSES = os.environ.get("SYSTEM_WIDE_ROLE_CLASSES", [])
+DEFAULT_SYSTEM_WIDE_ROLE_CLASSES = ['enterprise.SystemWideEnterpriseUserRoleAssignment']
+SYSTEM_WIDE_ROLE_CLASSES = os.environ.get("SYSTEM_WIDE_ROLE_CLASSES", DEFAULT_SYSTEM_WIDE_ROLE_CLASSES)

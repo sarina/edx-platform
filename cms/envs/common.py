@@ -146,6 +146,9 @@ from lms.envs.common import (
     # Methods to derive settings
     _make_mako_template_dirs,
     _make_locale_paths,
+
+    # rbac settings
+    SYSTEM_WIDE_ROLE_CLASSES
 )
 from path import Path as path
 from django.core.urlresolvers import reverse_lazy
@@ -1571,4 +1574,4 @@ plugin_settings.add_plugins(__name__, plugin_constants.ProjectType.CMS, plugin_c
 COURSE_EXPORT_DOWNLOAD_CHUNK_SIZE = 8192
 
 ############### Settings for edx-rbac  ###############
-SYSTEM_WIDE_ROLE_CLASSES = os.environ.get("SYSTEM_WIDE_ROLE_CLASSES", [])
+SYSTEM_WIDE_ROLE_CLASSES = os.environ.get("SYSTEM_WIDE_ROLE_CLASSES", SYSTEM_WIDE_ROLE_CLASSES)
