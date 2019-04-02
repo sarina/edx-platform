@@ -380,7 +380,7 @@ class CourseGradeReport(object):
             subsection_grade = course_grade.subsection_grade(subsection_location)
             if subsection_grade.attempted_graded:
                 grade_result = subsection_grade.percent_graded
-            elif has_access(course_grade.user, 'load', subsection_location):
+            elif has_access(course_grade.user, 'load', subsection_headers):
                 grade_result = u'Not Attempted'
             else:
                 grade_result = u'Not Accessible'
