@@ -131,7 +131,7 @@ class CourseAppsView(DeveloperErrorViewMixin, views.APIView):
                 "id": "discussion",
                 "name": "Discussion"
             },
-            ...
+            . . .
         ]
         ```
         """

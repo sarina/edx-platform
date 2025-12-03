@@ -61,7 +61,7 @@ class NotificationListAPIView(generics.ListAPIView):
                     "last_read": (datetime) last_read,
                     "last_seen": (datetime) last_seen
                 },
-                ...
+                . . .
             ],
             "count": (int) total_number_of_notifications,
             "next": (str) url_to_next_page_of_notifications,

@@ -33,6 +33,7 @@ historical records, `DiscussionsConfiguration`.
 The underlying model can be represented as:
 
 .. code-block:: python
+
     class DiscussionsConfiguration:
         context_key = LearningContextKeyField(primary_key=True, ...)
         enabled = models.BooleanField(default=True, ...)
@@ -59,7 +60,7 @@ The underlying model can be represented as:
 Future Work
 -----------
 
-- `LtiConfiguration` should be extended for feature-parity with_out_
+- `LtiConfiguration` should be extended for feature-parity without
   XBlock dependencies.
 
 - Discussion apps/plugins/providers, implemented as Python models, will

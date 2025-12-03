@@ -1,5 +1,5 @@
 Course Live Plugin
-_______________
+##################
 
 Status
 ======
@@ -29,7 +29,7 @@ Decision
 We proposed to add the course live as a plugin with the following structure
 
 Course Live App Plugin Class
------------------------
+----------------------------
 
 The app will be loaded as a plugin and added to `setup.py` with the namespace
 "openedx.course_app".

@@ -35,6 +35,7 @@ v2 content libraries are:
 
 Terminology Used
 ^^^^^^^^^^^^^^^^
+
 #. Blocks: Each reusable piece of content in a library. Example: problems, videos,
    HTML. Also known as Xblocks.
 #. Library: Collection of blocks that can be used in one or more courses
@@ -73,7 +74,7 @@ Modulestore itself as the child.
 
 
 Proposed Implementation
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 The library referencing flow would be implemented within the Studio and/or LMS. The
 library content would be stored and rendered outside the Modulestore.
 

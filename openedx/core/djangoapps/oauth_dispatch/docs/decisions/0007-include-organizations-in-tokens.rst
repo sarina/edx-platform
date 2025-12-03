@@ -1,3 +1,5 @@
+.. _Include Organizations in Tokens:
+
 7. Include Organizations in Tokens
 ----------------------------------
 

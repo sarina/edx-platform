@@ -72,6 +72,9 @@ class ContentTypeGateTransformer(BlockStructureTransformer):
         return current_access or {}
 
     def transform(self, usage_info, block_structure):
+        """
+        Missing docstring
+        """
         if not ContentTypeGatingConfig.enabled_for_enrollment(
             user=usage_info.user,
             course_key=usage_info.course_key,

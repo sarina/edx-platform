@@ -1,6 +1,5 @@
 .. _programs:
 
-==================
 Programs Dashboard
 ==================
 
@@ -41,14 +40,14 @@ More Documentation
 ==================
 
 Implementation
-^^^^^^^^^^^^^^
+--------------
 
 The ``views`` module contains the Django views used to serve the Program listing
 page. The corresponding Backbone app is in the
 ``edx-platform/static/js/learner_dashboard``.
 
 Configuration
-^^^^^^^^^^^^^
+-------------
 
 In order to turn on the Programs tab, you need to update the ``Programs API
 Config`` object in the lms Django admin. Make sure you set the values

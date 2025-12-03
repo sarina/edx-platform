@@ -1,7 +1,6 @@
 0003. Use `bridgekeeper`_ for Permissions and Tracks
 ****************************************************
 
-~~~~~~~
 Context
 ~~~~~~~
 
@@ -19,10 +18,6 @@ in significant numbers of additional queries.
 as Django query filters. By inspection, it seems to support non-boolean
 return values for the Python-based permissions checks.
 
-.. _bridgekeeper: https://bridgekeeper.readthedocs.io/en/latest/index.html
-.. _django-rules: https://github.com/dfunckt/django-rules
-
-~~~~~~~~
 Decision
 ~~~~~~~~
 
@@ -30,11 +25,8 @@ Rather than use `django-rules`_ in edx-platform, we will convert permissions
 checks to use `bridgekeeper`_. The conversion will follow a similar outline
 to the plan in `0002`_.
 
-We will update all uses of `has_access`_, and all `CourseMode`_ membership
+We will update all uses of `has_access`_, and all CourseMode membership
 checks, to use `bridgekeeper`_ and named permissions.
-
-.. _`0002. Use django-rules for Permissions and Tracks`: https://github.com/openedx/edx-platform/blob/master/lms/djangoapps/courseware/docs/decisions/0002-permissions-via-django-rules.rst
-.. _`0002`: https://github.com/openedx/edx-platform/blob/master/lms/djangoapps/courseware/docs/decisions/0002-permissions-via-django-rules.rst
 
 Plan of Action
 ==============
@@ -88,9 +80,6 @@ and can be parallelized. However, at present, there are ~150 calls to
 `has_access`_ in edx-platform, so this is not an insignificant amount of
 work.
 
-.. _has_access: https://github.com/openedx/edx-platform/blob/master/lms/djangoapps/courseware/access.py#L103
-.. _user.has_perm: https://docs.djangoproject.com/en/2.1/ref/contrib/auth/#django.contrib.auth.models.User.has_perm
-
 Refactor contents of ``has_access``
 -----------------------------------
 
@@ -119,15 +108,14 @@ the conversion of `has_access`_ would be an improvement, perhaps with
 the addition of deprecation warnings for direct callers to `has_access`_
 so that we can track the remaining work with INCR tickets.
 
-~~~~~~
+
 Status
-~~~~~~
+======
 
 Proposed
 
-~~~~~~~~~~~~
 Consequences
-~~~~~~~~~~~~
+============
 
 When the conversion of `has_access`_ has been completed, it will be easier
 to add additional conditions to various permissions checks on specific objects.
@@ -135,14 +123,20 @@ It will also allow those conditions (predicates) to be written in
 a location that is central to the app they are responsible for, rather
 than requiring that they be added to `access.py`_.
 
-.. _access.py: https://github.com/openedx/edx-platform/blob/master/lms/djangoapps/courseware/access.py
-
-When the conversion of `CourseMode`_ membership checks has been completed,
-it will be easier to add new `CourseMode`_ types with similar permissions
-schema to the codebase. It will also open the way towards making `CourseMode`_
+When the conversion of CourseMode membership checks has been completed,
+it will be easier to add new CourseMode types with similar permissions
+schema to the codebase. It will also open the way towards making CourseMode
 permissions be data-driven, rather than being code specific, which would
-allow configuration-time specification of `CourseMode`_, rather than requiring
+allow configuration-time specification of CourseMode, rather than requiring
 the current combination of code and database entries.
 
 Converting all of these checks to use `bridgekeeper`_ will allow list-view
 query performance to be optimized.
+
+.. _has_access: https://github.com/openedx/edx-platform/blob/master/lms/djangoapps/courseware/access.py#L103
+.. _user.has_perm: https://docs.djangoproject.com/en/2.1/ref/contrib/auth/#django.contrib.auth.models.User.has_perm
+.. _`0002. Use django-rules for Permissions and Tracks`: https://github.com/openedx/edx-platform/blob/master/lms/djangoapps/courseware/docs/decisions/0002-permissions-via-django-rules.rst
+.. _`0002`: https://github.com/openedx/edx-platform/blob/master/lms/djangoapps/courseware/docs/decisions/0002-permissions-via-django-rules.rst
+.. _bridgekeeper: https://bridgekeeper.readthedocs.io/en/latest/index.html
+.. _access.py: https://github.com/openedx/edx-platform/blob/master/lms/djangoapps/courseware/access.py
+.. _django-rules: https://github.com/dfunckt/django-rules

@@ -55,10 +55,12 @@ In the Lilac release, usages of old import paths will raise instances of
 This error class is intentionally *not* a subclass of ``ImportError``;
 to understand why, consider the following common pattern used in packages outside
 of the edx-platform repo itself::
+
   try:
       from student.models import CourseEnrollment
   except ImportError:
       CourseEnrollment = None
+
 This pattern is (unfortunately) widely used to so packages can import
 objects from edx-platform modules in developer or production environments,
 whilst falling back to ``None`` when unit tests are run.

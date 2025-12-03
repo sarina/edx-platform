@@ -18,8 +18,10 @@ hitting rate limits when used with our own services/functions within Enterprise.
 Decisions
 ---------
 
-We will copy some of the core enrollment functionality present in the POST handler from
+We will copy some of the core enrollment functionality present in the POST handler from::
+
     `POST /api/enrollment/v1/enrollment`
+
 into a non-REST Python method without modify the existing POST handler.
 
 This is so we can call the basic 'create enrollment in LMS' functionality from edx-enterprise without

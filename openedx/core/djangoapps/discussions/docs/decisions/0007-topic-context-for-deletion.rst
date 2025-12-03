@@ -11,7 +11,7 @@ Proposal
 Context
 -------
 
-The ``DiscussionTopicLink``model currently stores all relevant information
+The ``DiscussionTopicLink`` model currently stores all relevant information
 for topics in a course. It can handle both course-wide topics and in-context
 topics. Currently when used for in-context discussions, each topic is linked
 to a usage key that defines the context in which it is used.

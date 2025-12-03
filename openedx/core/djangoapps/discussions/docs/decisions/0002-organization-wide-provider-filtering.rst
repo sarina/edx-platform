@@ -38,17 +38,27 @@ Consideration
 -------------
 
 - Django settings based (remote config, etc.)
+
   - pros:
+
     - ease of implmentation
   - cons:
+
     - overhead in maintenance (even with remote config, it would require
       an engineer to make a code/config change and pull request
+
 - Database-backed
+
   - pros:
+
     - ease of use
+
       - by (django) admins
+
   - cons:
+
     - possible schema lock-in
+
       - eg: do we scope it to `organizations` only?
             or do we generalize it enough to use elsewhere?
 
@@ -62,6 +72,7 @@ We propose to implement this as a Django database-backed model,
 The underlying model can be represented as:
 
 .. code-block:: python
+
     class ProviderFilter(StackedConfigurationModel):
         allow = models.CharField(blank=True, ...)
         deny = models.CharField(blank=True, ...)
@@ -83,11 +94,13 @@ Examples
 With this system, we can configure global/site-wide defaults,
 
 .. code-block:: python
+
     ProviderFilter.objects.create()
 
 And then override to deny an external provider for an organization:
 
 .. code-block:: python
+
     ProviderFilter.objects.create(
         org='Piazza-Less',
         deny='lti-providerx',
@@ -96,6 +109,7 @@ And then override to deny an external provider for an organization:
 Or override to deny _all_ external providers for an organization:
 
 .. code-block:: python
+
     ProviderFilter.objects.create(
         org='InternalOrganization',
         allow='cs_comments_service',
@@ -104,6 +118,7 @@ Or override to deny _all_ external providers for an organization:
 And grant an exemption to a specific course:
 
 .. code-block:: python
+
     ProviderFilter.objects.create(
         # a course in 'InternalOrganization'
         course=course,
@@ -115,6 +130,7 @@ Logic
 -----
 
 .. code-block:: python
+
     _filter = get_filter(course_key)
     if _filter is None:
         allow = set()

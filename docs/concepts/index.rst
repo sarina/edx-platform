@@ -9,5 +9,4 @@ Concepts and Guides
     frontend/javascript
     frontend/styling
     frontend/bootstrap
-    frontend/static_assets
     rest_apis

@@ -140,5 +140,6 @@ References
 
 
 * **Figure 3** – *Interaction diagram of the content block’s sidebar tabs*.
+
 .. image:: images/course_component_types_system_diagram.png
     :alt: Interaction diagram of the content block’s sidebar tabs

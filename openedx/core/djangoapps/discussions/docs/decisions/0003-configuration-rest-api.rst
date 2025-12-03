@@ -25,14 +25,23 @@ Requirements
 ------------
 
 For a given `context_key`, this API must allow:
+
 - retrieval of:
+
   - the list of available providers
+
   - any options for the active provider
+
 - creation of:
+
   - new configurations
+
 - updating of:
+
   - existing configurations
+
 - deletion/disabling of:
+
   - unneeded/inactive configurations
 
 
@@ -49,9 +58,12 @@ Decision
 We propose to implement this as a Django REST Framework (DRF)-based HTTP API.
 
 This API will provide the following HTTP methods:
+
 - GET
+
   - Retrieve collection of active and available providers,
     as well as their options
+
 - POST
   - Create, update, or disable a configuration
 
@@ -62,6 +74,7 @@ Payload Shape
 The payload is expected to be shaped like this (key names subject to change):
 
 .. code-block:: python
+
     payload = {
         'context_key': str(configuration.context_key),
         'enabled': configuration.enabled,
@@ -85,6 +98,7 @@ The payload is expected to be shaped like this (key names subject to change):
 
 The following configuration values are explicitly omitted;
 this should be left entirely up to the MFE.
+
 -  name
 -  logo
 -  description

@@ -9,7 +9,7 @@ Accepted
 Context
 -------
 
-In Feb 2018, to enable analytics (Segment) from Microfrontends (MFEs), a ``user_id`` claim was added to the JWT token `in this PR<https://github.com/openedx/edx-platform/pull/19765>`__.
+In Feb 2018, to enable analytics (Segment) from Microfrontends (MFEs), a ``user_id`` claim was added to the JWT token `in this PR <https://github.com/openedx/edx-platform/pull/19765>`_.
 
 The LMS API `to create authentication tokens`_ is used by external organizations to request a token on behalf of their users, mostly using grant_type ``client_credentials`` in the request. Since ``user_id`` is considered sensitive information, especially when combined with email and username which were already available in the JWT, it was decided to only add the ``user_id`` claim when a ``user_id`` scope was supplied. All MFE JWT cookies, which are known to only be used directly by the user, automatically used the ``user_id`` scope in order to get the required ``user_id`` claim.
 

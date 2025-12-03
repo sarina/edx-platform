@@ -1,5 +1,5 @@
 Migrating Apple users while switching teams on Apple
------------------------------------------------
+----------------------------------------------------
 
 This document explains how to migrate apple signed-in users in the event of
 switching teams on the Apple Developer console. When a user uses Apple to sign in,

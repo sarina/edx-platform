@@ -32,7 +32,7 @@ The most optimum method to introduce the feature was to register the model
 in support app and get the data via support API.
 
 Alternative/Rejected Approaches
-------------
+-------------------------------
 
 Addition for third_party_auth was attempted for the studio,
 but failed in the stage. The primary reason was the failing migration 

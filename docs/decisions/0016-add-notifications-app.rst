@@ -18,5 +18,5 @@ Decision
 Add a new Django application in lms for notifications
 
 Consequences
---------
+------------
 * adding a new Django app in lms

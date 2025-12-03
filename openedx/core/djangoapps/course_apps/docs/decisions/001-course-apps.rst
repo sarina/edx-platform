@@ -74,9 +74,8 @@ API, where the next step is to mark it as enabled.
 In the context of these apps, we need to distinguish between *installed*,
 *available* and *enabled*.
 
-Let's look at an existing feature to explain those terms. The `edxnotes` app
-has [code that is part of the
-platform](https://github.com/openedx/edx-platform/tree/636b2ca4c5add531cfce755fdb8965599acd79e0/lms/djangoapps/edxnotes).
+Let's look at an existing feature to explain those terms. The ``edxnotes`` app
+has `code that is part of the platform <https://github.com/openedx/edx-platform/tree/636b2ca4c5add531cfce755fdb8965599acd79e0/lms/djangoapps/edxnotes>`_.
 This code comes preinstalled since it's part of the platform. So it is already
 *installed*, however no one can use it just yet, since it it needs to first be
 enabled globally. In the case of an external plugin, you consider it installed
@@ -103,7 +102,7 @@ check.
 .. _CourseTabs: https://github.com/openedx/edx-platform/blob/636b2ca4c5add531cfce755fdb8965599acd79e0/openedx/core/lib/course_tabs.py#L13-L47
 
 Course App Plugin Class
-=======================
+***********************
 
 To be loaded as a Course App, you need to provide an entrypoint in ``setup.py``
 with the namespace ``openedx.course_app``. The entry should point to a Python
@@ -160,7 +159,7 @@ such a class and have these class methods call back to the existing code for
 availability checks and enabled checks.
 
 Course Apps API
-===============
+***************
 
 Each app has some associated metadata:
 
@@ -205,6 +204,8 @@ This API can be hosted at: ``/course_apps/v1/apps/{course_id}/``
 
 A ``GET`` request to this API will return an array of objects with the above
 structure.
+
+.. code-block::
 
     PATCH ``/course_apps/v1/apps/{course_id}/`` {
         "id": "wiki",

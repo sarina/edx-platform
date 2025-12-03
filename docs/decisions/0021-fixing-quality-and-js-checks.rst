@@ -140,4 +140,4 @@ Rejected Alternatives
 .. _which we have been trying to move off of: https://github.com/openedx/edx-platform/issues/34467
 .. _announced on the forums: https://discuss.openedx.org/t/checking-pii-annotations-with-a-lower-coverage-threshold/14254
 .. _OEP-30: https://docs.openedx.org/projects/openedx-proposals/en/latest/architectural-decisions/oep-0030-arch-pii-markup-and-auditing.html
-.. _fix the malformed annotations: https://github.com/openedx/edx-proctoring/issues/1241
+.. _fixed the malformed annotations: https://github.com/openedx/edx-proctoring/issues/1241
